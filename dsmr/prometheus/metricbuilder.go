@@ -194,7 +194,7 @@ var metricBuilders = map[string]MetricBuilder{
 	},
 	// Voltage
 	"1-0:32.7.0": MetricBuilder{
-		ValueType: prometheus.CounterValue,
+		ValueType: prometheus.GaugeValue,
 		Desc: prometheus.NewDesc(
 			namespace+"_voltage_V",
 			"voltage",
@@ -406,7 +406,7 @@ var metricBuilders = map[string]MetricBuilder{
 		Unit: "kW",
 	},
 	"0-1:24.2.1": MetricBuilder{
-		ValueType: prometheus.GaugeValue,
+		ValueType: prometheus.CounterValue,
 		Desc: prometheus.NewDesc(
 			namespace+"_gas_usage_m3",
 			"total gas usage in m3",
