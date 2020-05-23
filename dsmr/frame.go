@@ -98,6 +98,10 @@ func ParseFrame(frame string) (f Frame, err error) {
 			}
 		case "0-0:96.1.1":
 			f.EquipmentID = obj.Value
+		case "0-1:24.2.1":
+			s := strings.Split(obj.Value, "(")
+			obj.Value = s[1]
+			f.Objects[obj.ID] = obj
 		default:
 			f.Objects[obj.ID] = obj
 		}

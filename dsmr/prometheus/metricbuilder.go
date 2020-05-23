@@ -192,6 +192,17 @@ var metricBuilders = map[string]MetricBuilder{
 			prometheus.Labels{},
 		),
 	},
+	// Voltage
+	"1-0:32.7.0": MetricBuilder{
+		ValueType: prometheus.CounterValue,
+		Desc: prometheus.NewDesc(
+			namespace+"_voltage_V",
+			"voltage",
+			defaultLabels,
+			prometheus.Labels{},
+		),
+		Unit: "V",
+	},
 	// XXX Should implement handling of this special log datatype.
 	// Power Failure Event Log (long power failures) 1-0:99.97.0.255 2
 	// Buffer 7 Profile Generic TST, F10(0,0) - tag 6 Format applicable for
@@ -393,6 +404,16 @@ var metricBuilders = map[string]MetricBuilder{
 			prometheus.Labels{},
 		),
 		Unit: "kW",
+	},
+	"0-1:24.2.1": MetricBuilder{
+		ValueType: prometheus.GaugeValue,
+		Desc: prometheus.NewDesc(
+			namespace+"_gas_usage_m3",
+			"total gas usage in m3",
+			defaultLabels,
+			prometheus.Labels{},
+		),
+		Unit: "m3",
 	},
 
 	// TODO The types below are Smart Meter extensions like Gas meter, etc.
