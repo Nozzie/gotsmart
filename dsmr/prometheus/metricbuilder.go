@@ -197,7 +197,7 @@ var metricBuilders = map[string]MetricBuilder{
 		ValueType: prometheus.GaugeValue,
 		Desc: prometheus.NewDesc(
 			namespace+"_voltage_V",
-			"voltage",
+			"Instantaneous voltage L1 in V resolution",
 			defaultLabels,
 			prometheus.Labels{},
 		),
@@ -409,7 +409,7 @@ var metricBuilders = map[string]MetricBuilder{
 		ValueType: prometheus.CounterValue,
 		Desc: prometheus.NewDesc(
 			namespace+"_gas_usage_m3",
-			"total gas usage in m3",
+			"Last 5-minute value (temperature converted), gas delivered to client in m3,including decimal values and capture time",
 			defaultLabels,
 			prometheus.Labels{},
 		),
